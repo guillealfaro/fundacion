@@ -1,0 +1,134 @@
+.hero {
+  display: flex;
+  align-items: center;
+  background-color: #3a9dff;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    padding: 4rem;
+  }
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    text-align: center; // Add this rule to center-align content
+  }
+
+  @media (max-width: 840px) {
+    padding: 2rem; // Add some padding for smaller screens
+  }
+}
+
+.hero__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; // Change this to center-align items in column layout
+  align-items: center;
+  padding: 0px 65px;
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    padding: 0;
+    gap: 2rem; // Add space between stacked elements
+  }
+}
+
+.hero-text {
+  color: #ffffff;
+  max-width: 600px;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+
+    @media (min-width: 768px) {
+      font-size: 3.5rem;
+    }
+
+    @media (max-width: 1355px) {
+      font-size: 2rem; // Reduce size proportionally
+    }
+
+    @media (max-width: 840px) {
+      font-size: 1.75rem; // Smaller font for very narrow screens
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.25rem;
+    }
+
+    @media (max-width: 1355px) {
+      font-size: 0.9rem;
+      padding-right: 0.7rem; // Adjust size between breakpoints
+    }
+    @media (max-width: 1150px) {
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 840px) {
+      font-size: 0.85rem; // Smaller size for very narrow screens
+    }
+  }
+
+  .hero-button {
+    background-color: #fcc858;
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #ca8a04;
+      color: white;
+    }
+
+    @media (max-width: 1355px) {
+      padding: 0.5rem 1rem; // Adjust button size for smaller screens
+    }
+
+    @media (max-width: 840px) {
+      padding: 0.5rem 0.75rem; // Even smaller button for narrow screens
+    }
+  }
+}
+
+.hero-image {
+  margin-top: 2rem;
+
+  @media (min-width: 768px) {
+    margin-top: 0;
+    max-width: 50%;
+  }
+
+  img {
+    max-height: 400px;
+    object-fit: contain;
+
+    @media (min-width: 768px) {
+      max-height: 445px;
+    }
+
+    @media (max-width: 1355px) {
+      max-height: 350px; // Reduce image size proportionally
+    }
+
+    @media (max-width: 840px) {
+      max-height: 300px; // Further reduce for small screens
+    }
+  }
+
+  @media (max-width: 840px) {
+    margin-top: 0; // Remove extra margin in column layout
+    max-width: 80%; // Limit width in column layout
+  }
+}
