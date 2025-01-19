@@ -29,7 +29,7 @@ const Footer = () => {
               <FaLocationDot className="icon" />
             </a>
           </div>
-          <div className="contact-info">
+          <div className="footer-info">
             <p>
               Teléfono: <a href="tel:+50612345678">+506 1234 5678</a>
             </p>
@@ -38,12 +38,14 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="schedule">
+          <div className="footer-info">
             <h3>Horario de Servicio</h3>
             <p>L-V 7:00 AM - 5:00 PM</p>
           </div>
           <div className="creative-info">
-            <p>Sitio web diseñado y desarrollado por:</p>
+            <p className="footer-info">
+              Sitio web diseñado y desarrollado por:
+            </p>
             <div className="company-logo">
               <img
                 src={creativeLogo}

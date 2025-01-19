@@ -7,13 +7,11 @@ const Entities = () => {
   return (
     <section className="collaboration-section">
       <div className="content-container">
-        {/* Left Side: Logos */}
         <div className="logos">
           <img src={imas} alt="Logo IMAS" className="logo imas" />
           <img src={pani} alt="Logo PANI" className="logo" />
         </div>
 
-        {/* Right Side: Text */}
         <div className="text">
           <h2 className="title">Nuestro Compromiso con las Familias</h2>
           <p className="description">

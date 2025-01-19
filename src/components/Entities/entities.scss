@@ -12,7 +12,16 @@
     @media (max-width: 1100px) {
       flex-direction: column;
       padding: 0;
-      gap: 2rem; // Add space between stacked elements
+      gap: 2rem;
+
+      // Change the order of the child elements
+      .text {
+        order: 1; // Text comes first
+      }
+
+      .logos {
+        order: 2; // Logos come after the text
+      }
     }
 
     .logos {
@@ -30,8 +39,6 @@
         width: 220px;
         height: auto;
         transition: all 0.3s ease;
-
-        // Specific IMAS logo adjustments
 
         &:hover {
           transform: scale(1.1);
