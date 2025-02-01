@@ -9,10 +9,10 @@
   height: 80px;
 
   @media (max-width: 1070px) {
-    padding: 0 80px;
+    padding: 0 70px;
   }
   @media (max-width: 768px) {
-    padding: 0 40px;
+    padding: 0 50px;
   }
   @media (max-width: 480px) {
     padding: 0 20px;
@@ -35,11 +35,14 @@
       width: auto;
       transition: max-height 0.3s ease;
 
-      @media (max-width: 1070px) {
+      @media (max-width: 1080px) {
         max-height: 80px;
       }
-      @media (max-width: 895px) {
+      @media (max-width: 978px) {
         max-height: 70px;
+      }
+      @media (max-width: 825px) {
+        max-height: 65px;
       }
       @media (max-width: 480px) {
         max-height: 60px;
@@ -63,12 +66,16 @@
         color: #3b82f6;
       }
 
-      @media (max-width: 1070px) {
+      @media (max-width: 1080px) {
         font-size: 0.9rem;
       }
-      @media (max-width: 895px) {
+      @media (max-width: 978px) {
         font-size: 0.75rem;
       }
+      @media (max-width: 825px) {
+        font-size: 0.7rem;
+      }
+
       @media (max-width: 768px) {
         color: #3b82f6;
         &:hover {
@@ -81,8 +88,7 @@
       }
     }
 
-    // For mobile view, hide links by default
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       display: none;
       flex-direction: column;
       position: absolute;
@@ -97,11 +103,11 @@
         display: flex;
         background-color: #ffffff;
         color: #ffffff;
+        padding: 10px 0px 10px 0px;
       }
     }
   }
-
-  &__button {
+  .navbar__button {
     background-color: #fcc858;
     color: #ffffff;
     border: none;
@@ -112,10 +118,10 @@
     transition: all 0.2s ease;
 
     &:hover {
-      color: #95bdfc;
+      background-color: #d97706;
     }
 
-    @media (max-width: 1070px) {
+    @media (max-width: 1080px) {
       padding: 6px 12px;
       font-size: 0.9rem;
     }
@@ -135,7 +141,7 @@
     cursor: pointer;
     color: #3b82f6;
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       display: block;
     }
   }

@@ -16,7 +16,6 @@ const ServiceCard = ({ image, title, text, isImageRight }) => {
         <img src={image} alt="Service Illustration" />
       </div>
       <div className={styles.textContainer}>
-        {/* Add the header/title */}
         <h3 className={styles.serviceTitle}>{title}</h3>
         <p>{text}</p>
       </div>

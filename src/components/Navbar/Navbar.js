@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./navbar.scss";
 import logo from "../../assets/logo-abc.png";
 
@@ -18,19 +19,24 @@ const Navbar = () => {
         <nav
           className={`navbar__links ${isMenuOpen ? "navbar__links--open" : ""}`}
         >
-          <a href="/" className="navbar__link">
+          <Link to="/" className="navbar__link">
             Inicio
-          </a>
-          <a href="/donaciones" className="navbar__link">
-            Donaciones
-          </a>
-          <a href="/nosotros" className="navbar__link">
+          </Link>
+          <Link to="/Nosotros" className="navbar__link">
             Nosotros
-          </a>
-          <a href="/informacion" className="navbar__link">
-            Información
-          </a>
-          <button className="navbar__button">Contáctenos</button>
+          </Link>
+          <Link to="/Servicios" className="navbar__link">
+            Servicios
+          </Link>
+          <Link to="/Donaciones" className="navbar__link">
+            Donaciones
+          </Link>
+          <Link to="/Admisiones" className="navbar__link">
+            Admisiones
+          </Link>
+          <Link to="/Contactenos" className="navbar__button">
+            Contáctenos
+          </Link>
         </nav>
         <div className="navbar__menu-icon" onClick={toggleMenu}>
           {isMenuOpen ? (
