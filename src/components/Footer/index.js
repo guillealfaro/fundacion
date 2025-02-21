@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../Footer/footer.scss";
 import kinderLogo from "../../assets/logo-secundario.png";
 import creativeLogo from "../../assets/blanco.png";
@@ -8,11 +9,17 @@ import { FaTiktok } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="footer">
       <div className="container">
         <div className="left">
-          <img src={kinderLogo} alt="Kinder Logo" />
+          <Link to="/" onClick={scrollToTop}>
+            <img src={kinderLogo} alt="Kinder Logo" />
+          </Link>
         </div>
         <div className="right">
           <div className="icons">

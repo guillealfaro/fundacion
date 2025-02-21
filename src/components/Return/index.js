@@ -26,7 +26,9 @@ const Return = () => {
         </Link>
       </div>
       <div className="right">
-        <img src={logo} alt="Fundación Creciendo Feliz" className="logo" />
+        <Link to="/">
+          <img src={logo} alt="Fundación Creciendo Feliz" className="logo" />
+        </Link>
       </div>
     </nav>
   );

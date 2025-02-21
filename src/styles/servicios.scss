@@ -1,0 +1,73 @@
+.Servicios {
+  background-color: #e6f0f5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem;
+  height: auto;
+  margin: 20px 40px 20px 40px;
+  border-radius: 20px;
+
+  .texto {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  h4 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #232323;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+  }
+
+  button {
+    width: 155px;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #99e8fc; // Red button
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #67e1ff;
+    }
+  }
+
+  .fun-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .fun-image img {
+    object-fit: contain;
+  }
+}
+.mySwiper {
+  margin: 40px 40px 40px 40px;
+  background-color: rgba(255, 255, 255, 0.789);
+  .swiper-slide {
+    display: flex;
+    justify-content: center; /* Centers image horizontally */
+    align-items: center; /* Centers image vertically */
+  }
+
+  .swiper-slide img {
+    max-width: 30%;
+    object-fit: contain; /* Ensures the whole image is fully visible */
+  }
+  .swipe-image {
+    border-radius: 20px;
+  }
+}

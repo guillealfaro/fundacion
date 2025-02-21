@@ -11,49 +11,92 @@
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  @media (max-width: 720px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
 }
 
 .contact-info {
   width: 45%;
   display: flex;
   flex-direction: column;
+  align-items: center; // Centers the image
   padding: 0px 10px 0px 15px;
 
-  h2 {
-    margin-bottom: 1rem;
+  .image-container {
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+  }
+  @media (max-width: 720px) {
+    width: 75%;
+  }
+}
+
+.image-contact {
+  object-fit: fill;
+  margin-bottom: 1rem;
+}
+
+.info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.info-item {
+  flex: 1 1 calc(50% - 10px); /* Ensures two per row with space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 15px;
+  background: white;
+  border-radius: 10px;
+  min-height: 100px; /* Ensures a base height */
+  transition: all 0.3s ease;
+
+  .icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    transition: all 0.3s ease;
   }
 
-  .info-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
+  h4 {
+    margin: 0;
+    transition: all 0.3s ease;
+  }
 
-    .image-contact {
-      max-height: 300px;
-      width: auto;
-    }
-
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+  @media (max-width: 1481px) {
     .icon {
-      font-size: 1.5rem;
-      margin-right: 10px;
+      font-size: 1.2rem;
+      margin-right: 7px;
     }
-
     h4 {
-      margin: 0;
     }
-
     p {
-      margin: 0;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
   }
 }
 
 .contact-form {
   width: 45%;
-  background: #d1e5e6;
+  background: #d5d9f9;
   padding: 2rem;
   border-radius: 8px;
+  @media (max-width: 720px) {
+    width: 68%;
+  }
 
   form {
     display: flex;
@@ -68,13 +111,13 @@
     textarea {
       padding: 10px;
       margin-bottom: 15px;
-      border: 1px solid #ccc;
+      border: 1px solid #cccccc;
       border-radius: 5px;
       width: 100%;
     }
 
     button {
-      background: #00796b;
+      background: #776af2;
       color: white;
       padding: 10px;
       border: none;
@@ -82,7 +125,7 @@
       border-radius: 5px;
 
       &:hover {
-        background: #005b4f;
+        background: #776af2;
       }
     }
   }

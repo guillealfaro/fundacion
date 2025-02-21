@@ -14,7 +14,9 @@ const Navbar = () => {
     <header className="navbar">
       <div className="navbar__container">
         <div className="navbar__logo">
-          <img src={logo} alt="Fundación Creciendo Feliz" />
+          <Link to="/">
+            <img src={logo} alt="Fundación Creciendo Feliz" />
+          </Link>
         </div>
         <nav
           className={`navbar__links ${isMenuOpen ? "navbar__links--open" : ""}`}

@@ -15,48 +15,50 @@ const Contactenos = () => {
 
       <div className="contact-content">
         <div className="contact-info">
-          <div className="info-item">
-            <img className="image-contact" src={pic} alt="" />
+          <div className="image-container">
+            <img className="image-contact" src={pic} alt="Contact" />
           </div>
-          <div className="info-item">
-            <FaLocationDot className="icon" />
-            <div>
-              <h4>Dirección</h4>
-              <p>San José, Pavas, contiguo a DEMASA</p>
+          <div className="info-grid">
+            <div className="info-item">
+              <FaLocationDot className="icon" />
+              <div>
+                <h4>Dirección</h4>
+                <p>San José, Pavas, contiguo a DEMASA</p>
+              </div>
             </div>
-          </div>
-          <div className="info-item">
-            <BsFillTelephoneFill className="icon" />
-            <div>
-              <h4>Teléfono</h4>
-              <p>+506 2220 1049</p>
+            <div className="info-item">
+              <BsFillTelephoneFill className="icon" />
+              <div>
+                <h4>Teléfono</h4>
+                <p>2220 1049</p>
+              </div>
             </div>
-          </div>
-          <div className="info-item">
-            <MdEmail className="icon" />
-            <div>
-              <h4>Correo</h4>
-              <p>creciendofelizabc@gmail.com</p>
+            <div className="info-item">
+              <MdEmail className="icon" />
+              <div>
+                <h4>Correo</h4>
+                <p>creciendofelizabc@gmail.com</p>
+              </div>
             </div>
-          </div>
-          <div className="info-item">
-            <AiFillLike className="icon" />
-            <div>
-              <h4>Redes Sociales</h4>
-              <p>Facebook | Instagram | YouTube</p>
+            <div className="info-item">
+              <AiFillLike className="icon" />
+              <div>
+                <h4>Redes Sociales</h4>
+                <p>Facebook | Instagram </p>
+              </div>
             </div>
           </div>
         </div>
 
         <div className="contact-form">
           <form>
-            <label>Nombre *</label>
+            <label>Nombre:</label>
             <input type="text" placeholder="Escriba su nombre" />
-            <label>Email *</label>
+            <label>Email:</label>
             <input type="email" placeholder="Escriba su email" />
-            <label>Teléfono</label>
+            <label>Teléfono:</label>
             <input type="text" placeholder="Escriba su teléfono" />
-            <label>Tu mensaje</label>
+            <label>Tu mensaje:</label>
             <textarea placeholder="Escriba su consulta aquí..."></textarea>
             <button type="submit">Enviar</button>
           </form>
