@@ -1,112 +1,115 @@
-"use client"
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  ArrowDown,
+  Calendar,
+  UserCheck,
+  FileText,
+  CheckCircle,
+  FolderPlus,
+} from "lucide-react";
+import PropTypes from "prop-types";
+import "../StepsIMAS/stepsIMAS.scss";
 
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { ArrowDown, CheckCircle, Clock, FileText, Settings, Star, Zap } from "lucide-react"
-import PropTypes from "prop-types"
-import "../StepsIMAS/stepsIMAS.scss"
 export default function StepsIMAS() {
-  const containerRef = useRef(null)
+  const containerRef = useRef(null);
+
+  // Datos reales del proceso IMAS
+  const imasSteps = [
+    {
+      icon: <Calendar className="step-icon" />,
+      title: "Solicitar cita en IMAS",
+      description:
+        "Las familias tienen que ir al IMAS, solicitar una cita (normalmente por correo), y esperar a que les llamen.",
+    },
+    {
+      icon: <UserCheck className="step-icon" />,
+      title: "Entrevista y verificación",
+      description:
+        "Les hacen la entrevista y varios procesos de investigación socioeconómica que son gestionados por el IMAS.",
+    },
+    {
+      icon: <FileText className="step-icon" />,
+      title: "Obtener carta de cupo",
+      description:
+        "Una vez aprobados, los padres eligen la institución y solicitan una carta donde confirme que hay espacio para el niño en la guardería.",
+    },
+    {
+      icon: <CheckCircle className="step-icon" />,
+      title: "Recoger boleta de aprobación",
+      description:
+        "Regresan al IMAS con la carta y reciben una boleta que indica la aprobación final e incluye la fecha de inicio.",
+    },
+    {
+      icon: <FolderPlus className="step-icon" />,
+      title: "Reunión para expediente",
+      description:
+        "Agendar reunión para crear el expediente: copia de cédulas, constancia de nacimiento, dictamen médico y fotos tamaño pasaporte.",
+    },
+  ];
 
   return (
     <div className="scroll-container">
-      {/* Initial view with instruction to scroll */}
+      {/* Intro sección */}
       <div className="intro-section">
-        <h1>Scroll Down to See the Steps</h1>
+        <h1>Baja para ver paso a paso el proceso de admision</h1>
         <ArrowDown className="arrow-icon" />
       </div>
 
-      {/* Main scroll container */}
+      {/* Contenedor principal */}
       <div ref={containerRef} className="main-container">
         <div className="content-wrapper">
           <div className="grid-layout">
-            {/* Left fixed content */}
+            {/* Contenido fijo izquierda */}
             <div className="fixed-content">
-              <h2>Our Process</h2>
+              <h2>Pasos para matricular con el IMAS</h2>
               <p className="description">
-                Follow our proven step-by-step approach to transform your ideas into reality. Each step is carefully
-                designed to ensure the best possible outcome for your project.
+                Para padres y madres de familia, el proceso de la matrícula con
+                el IMAS será solo para aquellas familias en las que el niño o
+                niña se encuentra cursando el kinder y tiene entre 1 y 6 años.
               </p>
               <div className="scroll-indicator">
                 <div className="indicator-line"></div>
-                <p>Scroll to explore</p>
+                <p>Sigue bajando para conocer los pasos</p>
               </div>
             </div>
 
-            {/* Right scrolling steps */}
+            {/* Pasos derechos */}
             <div className="steps-container">
-              <StepCard
-                containerRef={containerRef}
-                index={0}
-                icon={<FileText className="step-icon" />}
-                title="Discovery"
-                description="We start by understanding your goals, target audience, and project requirements to create a solid foundation."
-              />
-
-              <StepCard
-                containerRef={containerRef}
-                index={1}
-                icon={<Settings className="step-icon" />}
-                title="Planning"
-                description="Our team develops a comprehensive strategy and project roadmap tailored to your specific needs."
-              />
-
-              <StepCard
-                containerRef={containerRef}
-                index={2}
-                icon={<Zap className="step-icon" />}
-                title="Design"
-                description="We create intuitive, engaging designs that align with your brand and provide an exceptional user experience."
-              />
-
-              <StepCard
-                containerRef={containerRef}
-                index={3}
-                icon={<Clock className="step-icon" />}
-                title="Development"
-                description="Our developers bring the designs to life with clean, efficient code that ensures performance and scalability."
-              />
-
-              <StepCard
-                containerRef={containerRef}
-                index={4}
-                icon={<CheckCircle className="step-icon" />}
-                title="Testing"
-                description="Rigorous quality assurance ensures your project works flawlessly across all devices and browsers."
-              />
-
-              <StepCard
-                containerRef={containerRef}
-                index={5}
-                icon={<Star className="step-icon" />}
-                title="Launch"
-                description="We handle the deployment process and provide support to ensure a smooth and successful launch."
-              />
+              {imasSteps.map((step, index) => (
+                <StepCard
+                  key={index}
+                  containerRef={containerRef}
+                  index={index}
+                  icon={step.icon}
+                  title={step.title}
+                  description={step.description}
+                />
+              ))}
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function StepCard({ containerRef, index, icon, title, description }) {
-  const cardRef = useRef(null)
-
+  const cardRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
     container: containerRef,
     offset: ["start end", "end start"],
-  })
+  });
 
-  // Transform the Y position based on scroll progress
-  const y = useTransform(scrollYProgress, [0, 0.5, 1], [100, 0, -50])
+  const y = useTransform(scrollYProgress, [0, 0.5, 1], [100, 0, -50]);
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.8, 1],
+    [0.3, 1, 1, 0.6]
+  );
 
-  // Fade in the cards as they come into view
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.3, 1, 1, 0.6])
-
-  // Add a slight delay to each card based on its index
-  const initialDelay = index * 0.1
+  const initialDelay = index * 0.1;
 
   return (
     <motion.div
@@ -125,14 +128,13 @@ function StepCard({ containerRef, index, icon, title, description }) {
         <p className="card-description">{description}</p>
       </div>
     </motion.div>
-  )
+  );
 }
 
-// Define PropTypes for the StepCard component
 StepCard.propTypes = {
   containerRef: PropTypes.object.isRequired,
   index: PropTypes.number.isRequired,
   icon: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-}
+};
