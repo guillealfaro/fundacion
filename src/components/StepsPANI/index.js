@@ -34,7 +34,7 @@ export default function StepsPANI() {
               </p>
               <div className="scroll-indicator">
                 <div className="indicator-line"></div>
-                <p>Sigue bajando para conocer los pasos</p>
+                <p>Baja para explorar</p>
               </div>
             </div>
 

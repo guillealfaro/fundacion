@@ -2,27 +2,69 @@
 .scroll-container {
   min-height: 210vh;
   background-color: var(--background, #fff);
+
+  // En móvil no necesitamos tanto scroll
+  @media (max-width: 1025px) {
+    min-height: auto;
+  }
 }
 
-// Intro section
 .intro-section {
   display: flex;
-  height: 60vh;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 1rem;
-  text-align: center;
+  gap: 2rem;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgb(206, 206, 234);
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 2rem;
 
-  h1 {
-    font-size: 2.25rem;
-    font-weight: 700;
+  .intro-image-wrapper {
+    flex: 1;
+    img.intro-image {
+      width: 100%;
+      height: auto;
+    }
   }
 
-  .arrow-icon {
-    height: 2rem;
-    width: 2rem;
-    animation: bounce 1s infinite alternate;
+  .intro-text-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .intro-text {
+      font-size: 1rem;
+      color: var(--muted-foreground, #6b7280);
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+
+    .arrow-icon {
+      font-size: 2rem;
+      animation: bounce 1s infinite alternate;
+      align-self: center;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    .intro-text-wrapper {
+      text-align: center;
+      align-items: center;
+    }
+    .arrow-icon {
+      align-self: center;
+    }
   }
 }
 
@@ -49,18 +91,18 @@
   @media (min-width: 640px) {
     padding: 0 1.5rem;
   }
-
-  @media (min-width: 1024px) {
+  @media (min-width: 1025px) {
     padding: 0 2rem;
   }
 }
 
+// Grid layout: dos columnas en desktop, una en móvil
 .grid-layout {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1026px) {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -73,14 +115,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 0 1rem;
 
   h2 {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 500;
     margin-bottom: 1.5rem;
 
     @media (min-width: 640px) {
       font-size: 2.25rem;
+    }
+    @media (max-width: 1025px) {
+      font-size: 1.75rem;
     }
   }
 
@@ -88,6 +134,10 @@
     font-size: 1.125rem;
     color: var(--muted-foreground, #6b7280);
     margin-bottom: 2rem;
+
+    @media (max-width: 1025px) {
+      font-size: 1rem;
+    }
   }
 
   .scroll-indicator {
@@ -98,7 +148,7 @@
     .indicator-line {
       height: 0.25rem;
       width: 4rem;
-      background-color: var(--primary, #3b82f6);
+      background-color: var(--primary, #a09ce2);
       border-radius: 9999px;
     }
 
@@ -107,6 +157,14 @@
       font-weight: 500;
     }
   }
+
+  // ----------- MOBILE OVERRIDES -----------
+  @media (max-width: 1025px) {
+    position: static;
+    top: auto;
+    height: auto;
+    padding: 1rem 0;
+  }
 }
 
 // Right scrolling steps
@@ -114,20 +172,29 @@
   position: relative;
   padding-top: 20vh;
   padding-bottom: 60vh;
+
+  @media (max-width: 1025px) {
+    padding: 1rem 0 2rem;
+  }
 }
 
-// Step card styles
+// Step card wrapper
 .step-card-wrapper {
   margin-bottom: 4rem;
   position: relative;
+
+  // Neutralizar la animación de transform en móvil
+  @media (max-width: 1025px) {
+    transform: none !important;
+  }
 }
 
+// Step card styles
 .step-card {
   background-color: var(--card, #fff);
   border-radius: 0.5rem;
   padding: 1.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 5px -1px #6b72aa;
   border: 1px solid var(--border, #e5e7eb);
 
   .card-header {
@@ -144,7 +211,7 @@
       height: 3rem;
       border-radius: 9999px;
       background-color: rgba(var(--primary-rgb, 59, 130, 246), 0.1);
-      color: var(--primary, #3b82f6);
+      color: var(--primary, #6b72aa);
     }
 
     .step-icon {
@@ -155,10 +222,18 @@
     h3 {
       font-size: 1.25rem;
       font-weight: 600;
+
+      @media (max-width: 1025px) {
+        font-size: 1.125rem;
+      }
     }
   }
 
   .card-description {
     color: var(--muted-foreground, #6b7280);
+
+    @media (max-width: 1025px) {
+      font-size: 0.95rem;
+    }
   }
 }
