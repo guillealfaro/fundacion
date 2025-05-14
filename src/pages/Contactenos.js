@@ -20,32 +20,32 @@ const Contactenos = () => {
           </div>
           <div className="info-grid">
             <div className="info-item">
-              <FaLocationDot className="icon" />
-              <div>
+              <div className="info-header">
+                <FaLocationDot className="icon" />
                 <h4>Dirección</h4>
-                <p>San José, Pavas, contiguo a DEMASA</p>
               </div>
+              <p>San José, Pavas, contiguo a DEMASA</p>
             </div>
             <div className="info-item">
-              <BsFillTelephoneFill className="icon" />
-              <div>
+              <div className="info-header">
+                <BsFillTelephoneFill className="icon" />
                 <h4>Teléfono</h4>
-                <p>2220 1049</p>
               </div>
+              <p>2220 1049</p>
             </div>
             <div className="info-item">
-              <MdEmail className="icon" />
-              <div>
+              <div className="info-header">
+                <MdEmail className="icon" />
                 <h4>Correo</h4>
-                <p>creciendofelizabc@gmail.com</p>
               </div>
+              <p>creciendofelizabc@gmail.com</p>
             </div>
             <div className="info-item">
-              <AiFillLike className="icon" />
-              <div>
+              <div className="info-header">
+                <AiFillLike className="icon" />
                 <h4>Redes Sociales</h4>
-                <p>Facebook | Instagram </p>
               </div>
+              <p>Facebook | Instagram</p>
             </div>
           </div>
         </div>

@@ -1,0 +1,264 @@
+.donaciones-page {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  max-width: 1280px;
+  margin: 0;
+}
+
+/* HERO */
+.donaciones-hero {
+  text-align: center;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1.125rem;
+    color: var(--muted-foreground, #6b7280);
+  }
+  @media (max-width: 1024px) {
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* POR QUÉ DONAR */
+.donaciones-why {
+  background: var(--card, #fff);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  p {
+    font-size: 1rem;
+    color: var(--muted-foreground, #6b7280);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: auto;
+  }
+}
+
+/* GALERÍA */
+.donaciones-gallery {
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .gallery-swiper {
+    width: 100%;
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .slide-caption {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      color: var(--muted-foreground, #6b7280);
+    }
+  }
+}
+.mySwiper {
+  margin: 40px 40px 40px 40px;
+  background-color: rgba(255, 255, 255, 0.789);
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos estén en columna */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    gap: 10px; /* Espacio entre la imagen y el caption */
+  }
+
+  .swiper-slide img {
+    max-width: 30%;
+    object-fit: contain; /* Asegura que la imagen sea completamente visible */
+    border-radius: 20px;
+  }
+
+  .slide-caption {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    color: var(--muted-foreground, #6b7280);
+  }
+
+  .swiper-pagination {
+    position: relative; /* Cambia la posición a relativa */
+    margin-top: 20px; /* Añade espacio entre el caption y los puntitos */
+    bottom: 0; /* Asegura que los puntitos estén al final del Swiper */
+  }
+
+  .swiper-pagination-bullet {
+    background-color: #ccc; /* Color de los puntitos inactivos */
+    opacity: 0.7;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &-active {
+      background-color: #007bff; /* Color del puntito activo */
+      transform: scale(1.2); /* Agranda el puntito activo */
+    }
+  }
+}
+/* COLABORADORES */
+.donaciones-colaboradores {
+  margin: 40px 40px 60px 40px; /* Asegura el mismo espacio horizontal que el resto del contenido */
+  text-align: center;
+  h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .logos-grid {
+    display: flex;
+    justify-content: space-around; /* Espacio uniforme entre las imágenes */
+    align-items: center;
+    gap: 20px; /* Espacio entre los logos */
+    flex-wrap: wrap; /* Permite que los logos se ajusten en pantallas pequeñas */
+  }
+  .logo-item {
+    border: 2px solid #ddd; /* Borde bonito alrededor de las imágenes */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espacio interno para que el borde no toque la imagen */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto más elegante */
+    background-color: #fff; /* Fondo blanco para destacar los logos */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    img {
+      max-width: 120px;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 0.9rem;
+      color: var(--muted-foreground, #6b7280);
+    }
+  }
+  @media (max-width: 1024px) {
+    .logos-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 640px) {
+    .logos-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* CATEGORÍAS */
+.donaciones-categorias {
+  margin: 50px 50px 60px 40px; /* Asegura el mismo espacio horizontal que el resto de la página */
+  text-align: center;
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .categoria {
+    background: var(--card, #fff);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+    .cat-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      color: var(--primary, #3b82f6);
+      margin-bottom: 0.75rem;
+    }
+    h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+    p {
+      font-size: 0.95rem;
+      color: var(--muted-foreground, #6b7280);
+    }
+  }
+  .note {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--primary, #3b82f6);
+  }
+  @media (max-width: 1024px) {
+    .categorias-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 640px) {
+    .categorias-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* TESTIMONIOS */
+.donaciones-testimonios {
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  blockquote {
+    font-style: italic;
+    background: var(--card, #fff);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto;
+
+    .author {
+      display: block;
+      margin-top: 1rem;
+      text-align: right;
+      font-weight: bold;
+      color: var(--primary, #3b82f6);
+    }
+  }
+}
+
+/* CTA */
+.donaciones-cta {
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  button {
+    background: var(--primary, #3b82f6);
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 9999px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background: var(--primary-dark, #1e40af);
+    }
+  }
+}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { scroller } from "react-scroll";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
   ArrowDown,
@@ -16,6 +17,15 @@ import introImage from "../../assets/admisiones-pic.png";
 
 export default function StepsIMAS() {
   const containerRef = useRef(null);
+  const stepsRef = useRef(null); // Reference for the <h2> element
+
+  const scrollToSteps = () => {
+    scroller.scrollTo("steps-section", {
+      duration: 1000, // Duration in milliseconds
+      delay: 0, // Delay before starting the scroll
+      smooth: "easeInOutQuart", // Smooth scrolling effect
+    });
+  };
 
   return (
     <div className="scroll-container">
@@ -35,7 +45,7 @@ export default function StepsIMAS() {
             siguientes pasos entenderás completamente el proceso de admisión
             para que puedas relajarte y enfocarte en lo más importante: tu hijo.
           </p>
-          <ArrowDown className="arrow-icon" />
+          <ArrowDown className="arrow-icon" onClick={scrollToSteps} />
         </div>
       </div>
 
@@ -45,7 +55,9 @@ export default function StepsIMAS() {
           <div className="grid-layout">
             {/* Lado izquierdo fijo */}
             <div className="fixed-content">
-              <h2>Pasos para matricular con el IMAS</h2>
+              <h2 name="steps-section" ref={stepsRef}>
+                Pasos para matricular con el IMAS
+              </h2>
               <p className="description">
                 Para padres y madres de familia, el proceso de la matrícula con
                 el IMAS será solo para aquellas familias en las que el niño o
@@ -65,7 +77,7 @@ export default function StepsIMAS() {
                 containerRef={containerRef}
                 index={0}
                 icon={<Calendar className="step-icon" />}
-                title="Solicitar cita en IMAS"
+                title="Solicitar cita en el IMAS"
                 description="Las familias tienen que ir al IMAS, solicitar una cita (normalmente por correo) y esperar a que les llamen."
               />
 
