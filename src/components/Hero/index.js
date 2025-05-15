@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../Hero/hero.scss";
 import logo from "../../assets/kids-hero.png";
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="hero">
       <div className="hero__container">
@@ -17,7 +19,12 @@ const Hero = () => {
             oportunidad de aprendizaje y crecimiento para los hijos de madres y
             padres trabajadores.
           </p>
-          <button className="hero-button">Más información</button>
+          <button
+            className="hero-button"
+            onClick={() => (window.location.href = "/Admisiones")}
+          >
+            Más información
+          </button>
         </div>
 
         {/* Right  Section */}

@@ -1,9 +1,8 @@
 .donaciones-page {
+  margin: 0 auto; /* Centra el contenido horizontalmente */
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  max-width: 1280px;
-  margin: 0;
+  gap: 4rem; /* Espacio entre las secciones */
 }
 
 /* HERO */

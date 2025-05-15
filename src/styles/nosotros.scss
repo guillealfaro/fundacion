@@ -45,11 +45,12 @@
   border-radius: 8px;
   padding: 4rem; /* uniform padding */
   text-align: center;
-  background: #f4f4f4; /* Gris claro */
+  background: #9ccecf; /* Gris claro */
   filter: brightness(0.9);
   position: relative; /* Required for the ::before pseudo-element */
 
   h1 {
+    color: rgb(42, 41, 41);
     font-size: 1.7rem; /* Tamaño más grande para el título */
     font-weight: bold; /* Asegura que el título sea más destacado */
     margin-bottom: 1rem;
