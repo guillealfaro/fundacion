@@ -1,0 +1,157 @@
+/* src/styles/nosotros.scss */
+
+/* ==========================================
+   PAGE WRAPPER: Remove spacing around Return and Copy
+   ========================================== */
+.nosotros-page {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Return is first child, Copy is last child */
+.nosotros-page > *:first-child,
+.nosotros-page > *:last-child {
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================
+       CENTRAL CONTAINER: Uniform gutter & spacing
+       ========================================== */
+.cont {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem; /* uniform space on all sides */
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; /* space between sections */
+
+  @media (max-width: 1024px) {
+    padding: 1.5rem;
+    gap: 3rem;
+  }
+  @media (max-width: 640px) {
+    padding: 1rem;
+    gap: 2rem;
+  }
+}
+
+/* ==========================================
+       HERO SECTION
+       ========================================== */
+.tiqui {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 4rem; /* uniform padding */
+  text-align: center;
+  background: #f4f4f4; /* Gris claro */
+  filter: brightness(0.9);
+  position: relative; /* Required for the ::before pseudo-element */
+
+  h1 {
+    font-size: 1.7rem; /* Tamaño más grande para el título */
+    font-weight: bold; /* Asegura que el título sea más destacado */
+    margin-bottom: 1rem;
+  }
+  .tiqui-subtitle {
+    font-size: 1rem; /* Tamaño más pequeño para el párrafo */
+    font-weight: normal; /* Asegura que el párrafo tenga un peso normal */
+    color: var(
+      --muted-foreground,
+      #6b7280
+    ); /* Color más tenue para el párrafo */
+  }
+
+  @media (max-width: 1024px) {
+    padding: 3rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+/* ==========================================
+       MISIÓN & VISIÓN
+       ========================================== */
+.mision-vision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+
+  .mision,
+  .vision {
+    background: var(--card, #fff);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1rem;
+      color: var(--muted-foreground, #6b7280);
+      line-height: 1.6;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================
+       NUESTRO EQUIPO
+       ========================================== */
+.equipo {
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .equipo-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .equipo-photo {
+      flex: 1;
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .equipo-text {
+      flex: 1;
+      font-size: 1rem;
+      color: var(--muted-foreground, #6b7280);
+      line-height: 1.6;
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .equipo-content {
+      flex-direction: column;
+
+      .equipo-photo {
+        max-width: 100%;
+      }
+      .equipo-text {
+        text-align: center;
+        margin-top: 1rem;
+      }
+    }
+  }
+}
